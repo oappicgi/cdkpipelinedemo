@@ -22,37 +22,37 @@ go to your cdk.json file and change phase to develop
 #### bootstrap your accounts
 
 ##### prod account trust
-...
+```
 npx cdk bootstrap --profile account2-profile --trust ACCOUNT1  --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess aws://ACCOUNT2/REGION
-...
+```
 ##### dev account trust:
-...
+```
 npx cdk bootstrap --profile account1-profile --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess aws://ACCOUNT1/REGION
-...
+```
 ##### info
 replace accountX-profile with profile in your credentials file, AccountX with id and Region with chosen region
 you can add profile with assumed role credentials as long as you add secret-token info as well. That way you don't have to remember to remove them after pipeline has been deployed
 
 #### init your git
 Git can use your IAM credentials if you follow codecommit install instructions and install with 
-...
+```
 pip install git-remote-codecommit
-...
+```
 after installing codecommit remote tool push code to codecommit. You can then use address  outputted from npx cdk deploy 
-...
+```
 git init
 git remote add origin  codecomit_address
 git add .
 git commit -a -m "initial commit"
 git push --set-upstream origin master
-...
+```
 
 
 ### Deploy pipeline
 Now that we have code in git repository, and credentials in place we can finally create our pipeline with:
-...
+```
 npx cdk deploy
-...
+```
 For now own you shouldn't need to deploy anything as codepipeline can mutate itself and it pushes changes done to stacks and to application code.
 
 in case there are errors make sure you have pushed cdk.context.json to your git repository. For what ever reason it cannot create AZ and account info inside pipeline.
