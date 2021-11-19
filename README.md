@@ -7,15 +7,21 @@ This project contains template for deploying cdk stack with cicd pipeline from d
 ## init
 ### Setup phase
 
-do npm update in ranalytics folder to get all npm packages
+do 
+```
+npm update 
+```
+in ranalytics folder to get all npm packages
 
 in cdk.json there are multiple attributes you have to fill for your project. These include accountid for dev and prod and check others if you want to change them.
 
 in init phase make sure phase attribute is set to init
 This tells cicd stack that codecommit has to be created, which is required for cicd pipeline to work.
 
-deploy with npx cdk deploy
-
+deploy with: 
+```
+npx cdk deploy
+```
 at this point you should get codecommit push address
 go to your cdk.json file and change phase to develop
 
