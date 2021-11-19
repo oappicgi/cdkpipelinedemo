@@ -40,11 +40,11 @@ replace accountX-profile with profile in your credentials file, AccountX with id
 you can add profile with assumed role credentials as long as you add secret-token info as well. That way you don't have to remember to remove them after pipeline has been deployed
 
 #### init your git
-Git can use your IAM credentials if you follow codecommit install instructions and install remote-codecommit package
+Git can use your IAM credentials if you follow codecommit install instructions and install with 
 ```
 pip install git-remote-codecommit
 ```
-after installing package, push code to codecommit. You can then use address received from npx cdk deploy 
+after installing codecommit remote tool push code to codecommit. You can then use address  outputted from npx cdk deploy 
 ```
 git init
 git remote add origin  codecomit_address
@@ -67,9 +67,9 @@ in case there are errors make sure you have pushed cdk.context.json to your git 
 
 # What example project are included:
 
-I uploaded project with ServerlessServiceStack and default ServiceStack. Serverless is as name suggest serverless. Basically what it does is to add anything under serverless folder to S3 and adds cloudformation where S3 is origin. Check out cloudformation output for cloudfront url.
+I uploaded project with ServerlessServiceStack and default ServiceStack. Serverless is as name suggest serverless. Basically what it does is to add anything under serverless folder to S3 and adds cloudformation where S3 is origin. Check out cloudformation output for cloudformation url.
 
 ServiceStack has golang app from https://github.com/lamw/demo-go-webapp repo inside docker folder. cicd basically creates docker image out of it, pushes it to ecr and serves it through autoscaled fargate service which it deploys to vpc that is also created in same stack
 
 
-Now that you succesfully created pipeline you only need to push changes to git repository and any temporaty credentials that were created to bootstrap pipeline can be removed.
+Now that you succesfully created pipeline you only need to push changes to git repository and any temperaty credentials that were created to bootstrap pipeline can be removed.
