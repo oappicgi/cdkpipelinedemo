@@ -1,8 +1,8 @@
 {
-  "name": "r-analytis",
+  "name": "{appname}",
   "version": "0.2.0",
   "bin": {
-    "r-analytis": "bin/r-analytis.js"
+    "{appname}": "bin/{appname}.js"
   },
   "scripts": {
     "build": "tsc",
