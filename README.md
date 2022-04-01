@@ -11,7 +11,7 @@ do
 ```
 npm update 
 ```
-in ranalytics folder to get all npm packages
+in main folder to get all npm packages
 
 in cdk.json there are multiple attributes you have to fill for your project. These include accountid for dev and prod and check others if you want to change them.
 
