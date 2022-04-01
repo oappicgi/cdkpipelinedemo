@@ -78,4 +78,5 @@ execRole.addManagedPolicy(iam.ManagedPolicy.fromManagedPolicyArn(this, namingcon
     })
     scaling.scaleOnCpuUtilization("cpu-scaling",{ targetUtilizationPercent:80})
 
-}}
+}
+}
