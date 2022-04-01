@@ -16,9 +16,9 @@
     "clustername":"{appname}",
     "appname":"{appname}",
     "codecommitname": "{appname}",
-    "devaccountid": "111111111111111111",
-    "prodaccountid": "11111111111111111",
-    "region": "eu-central-1",
+    "devaccountid": "{devaccountid}",
+    "prodaccountid": "{prodaccountid}",
+    "region": "{region}",
     "phase": "develop"
   }
 }
